@@ -8,6 +8,8 @@ import AddParcel from "../pages/AddParcel";
 import Docs from "../pages/Docs";
 import GameController from "../components/GameController";
 import ChatBot from '../pages/Chatbot'
+import RutaApoyo from '../pages/RutaApoyo'
+
 
 function AppRoutes() {
   return (
@@ -20,7 +22,9 @@ function AppRoutes() {
           <Route path="/docs" element={<Docs />} />
           <Route path="/game-controller" element={<GameController />} />
           <Route path="/recommendations" element={<ChatBot />} />
+          <Route path="/routes" element={<RutaApoyo />} />
 
+          
         </Routes>
       </Router>
     </ParcelProvider> 

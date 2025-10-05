@@ -52,24 +52,17 @@ function Home() {
   const quickAccess = [
     {
       id: 'plagas',
-      title: 'Control Plagas',
+      title: 'Pest Control',
       icon: FaBug,
-      path: '/pest-control',
+      path: 'https://cdn.www.gob.pe/uploads/document/file/8771929/7253071-pronosticoplagas031025.pdf?v=1759441767',
       color: '#e74c3c'
     },
     {
       id: 'estadisticas',
-      title: 'Estadísticas',
+      title: 'Statistics',
       icon: FaChartLine,
-      path: '/stats',
+      path: 'https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1912/libro.pdf',
       color: '#3498db'
-    },
-    {
-      id: 'logros',
-      title: 'Mis Logros',
-      icon: FaTrophy,
-      path: '/achievements',
-      color: '#f39c12'
     }
   ];
 
