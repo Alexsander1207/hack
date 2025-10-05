@@ -1,0 +1,68 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+  background-color: #f4f4f9; /* Fondo suave */
+}
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.panel-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #eaf2f8; /* Un color ligero para el panel */
+}
+
+.nasa-data-panel {
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 5px solid #0056b3; /* Color NASA/científico */
+  background-color: #f9f9ff;
+}
+
+.feedback-box {
+  background-color: #ffe8d4;
+  border: 1px solid #ffcc99;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.decision-section button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Colores para las decisiones (opcional, pero ayuda a la presentación) */
+.btn-riego { background-color: #3498db; color: white; }
+.btn-fertilizar { background-color: #27ae60; color: white; }
+.btn-proteger { background-color: #e74c3c; color: white; }
+
+/* Estilos de la pantalla final */
+.final-stats {
+    text-align: left;
+    margin: 20px 0;
+    padding: 15px;
+    border: 2px dashed #0056b3;
+}
+.educational-note {
+    font-style: italic;
+    color: #555;
+}
