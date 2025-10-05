@@ -1,64 +1,24 @@
 // src/data/nasaSim.js
 
 export const nasaDataSim = [
-  // Etapa 1: Inicio (Condiciones óptimas)
-  {
-    NDVI: "Ideal", // El vigor es bueno, no necesita fertilizar
-    SMAP: "Ideal", // La humedad es perfecta, no necesita regar
-    Clima: "Bajo", // Clima seco, bajo riesgo de rancha
-  },
-  // Etapa 2: Clima Seco (Alerta de riego SMAP)
-  {
-    NDVI: "Ideal",
-    SMAP: "Seco", // ¡Alerta! Necesita riego
-    Clima: "Bajo",
-  },
-  // Etapa 3: Bajada de Vigor (Alerta de nutrición NDVI)
-  {
-    NDVI: "Bajo", // ¡Alerta! Necesita fertilización
-    SMAP: "Ideal",
-    Clima: "Bajo",
-  },
-  // Etapa 4: Lluvias (Alerta de Rancha - Clima)
-  {
-    NDVI: "Ideal",
-    SMAP: "Saturado", // Hay mucha agua por lluvia (riesgo de asfixia radical)
-    Clima: "ALTO", // ¡Clima cálido/húmedo! ALTO riesgo de tizón
-  },
-  // Etapa 5: Recuperación
-  {
-    NDVI: "Ideal",
-    SMAP: "Ideal",
-    Clima: "Bajo",
-  },
-  // Etapa 6: Exceso de Nutrientes (Mala decisión previa)
-  {
-    NDVI: "Muy Alto", // Exceso de vigor (sobre-fertilización previa) = insostenible
-    SMAP: "Ideal",
-    Clima: "Bajo",
-  },
-  // Etapa 7: Sequía severa
-  {
-    NDVI: "Bajo",
-    SMAP: "MUY SECO", // Riesgo de pérdida de cosecha
-    Clima: "Bajo",
-  },
-  // Etapa 8: Clima perfecto para la rancha
-  {
-    NDVI: "Ideal",
-    SMAP: "Ideal",
-    Clima: "ALTO", // ¡Nuevo ALTO riesgo!
-  },
-  // Etapa 9: Final de ciclo (Poca necesidad)
-  {
-    NDVI: "Bajo", // Cerca del final, vigor cae
-    SMAP: "Ideal",
-    Clima: "Bajo",
-  },
-  // Etapa 10: Última oportunidad
-  {
-    NDVI: "Ideal",
-    SMAP: "Seco",
-    Clima: "Moderado",
-  },
+  // Etapa 1: Condiciones Ideales
+  { NDVI: "Ideal", SMAP: "Ideal", Clima: "Bajo" }, 
+  // Etapa 2: Alerta de Sequía (SMAP)
+  { NDVI: "Ideal", SMAP: "Seco", Clima: "Bajo" }, 
+  // Etapa 3: Alerta de Nutrición (NDVI)
+  { NDVI: "Bajo", SMAP: "Ideal", Clima: "Bajo" }, 
+  // Etapa 4: Alerta de Rancha por Lluvia (Clima)
+  { NDVI: "Ideal", SMAP: "Saturado", Clima: "ALTO" },
+  // Etapa 5: Vigor Alto (Riesgo de sobre-fertilización previa)
+  { NDVI: "Muy Alto", SMAP: "Ideal", Clima: "Moderado" },
+  // Etapa 6: Sequía Extrema (SMAP)
+  { NDVI: "Bajo", SMAP: "MUY SECO", Clima: "Bajo" },
+  // Etapa 7: Alto Riesgo de Rancha y Vigor Bajo
+  { NDVI: "Bajo", SMAP: "Ideal", Clima: "ALTO" },
+  // Etapa 8: Recuperación de la tierra
+  { NDVI: "Ideal", SMAP: "Ideal", Clima: "Bajo" },
+  // Etapa 9: Fin de ciclo
+  { NDVI: "Bajo", SMAP: "Seco", Clima: "Moderado" },
+  // Etapa 10: Último riego (SMAP)
+  { NDVI: "Ideal", SMAP: "Seco", Clima: "Bajo" },
 ];
