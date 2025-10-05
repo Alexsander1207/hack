@@ -7,6 +7,7 @@ import Home from "../pages/HomeTemp";
 import AddParcel from "../pages/AddParcel";
 import Docs from "../pages/Docs";
 import GameController from "../components/GameController";
+import ChatBot from '../pages/Chatbot'
 
 function AppRoutes() {
   return (
@@ -18,6 +19,8 @@ function AppRoutes() {
           <Route path="/add" element={<AddParcel />} />
           <Route path="/docs" element={<Docs />} />
           <Route path="/game-controller" element={<GameController />} />
+          <Route path="/recommendations" element={<ChatBot />} />
+
         </Routes>
       </Router>
     </ParcelProvider> 
