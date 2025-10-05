@@ -1,15 +1,11 @@
-// src/App.js
-import React from 'react';
-import './App.css'; 
-import GameController from './components/GameController'; // Importamos el cerebro del juego
+// Rutas
+import AppRoutes from './routes/AppRoutes';
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      {/* Todo el juego se renderiza dentro del GameController */}
-      <GameController />
-    </div>
-  );
+
+  return <AppRoutes />;
 }
 
 export default App;

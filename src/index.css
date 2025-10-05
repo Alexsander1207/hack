@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.menu-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.2);
+  color: #fff;
+  background: #4caf50 !important;
+}
+
+body {
+  overflow-y: auto;
+}
+
+/* cuando hago hover en el contenedor */
+.menu-card:hover body {
+  overflow-y: hidden;
+}
