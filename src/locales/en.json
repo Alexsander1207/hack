@@ -1,0 +1,98 @@
+{
+  "app_title": "HACK NASA Sim",
+  "game": {
+    "title": "🥔 Native Potato EcoGuardian 🛰️",
+    "stage": "Stage {{current}} of {{total}}",
+    "initialFeedback": "Look at the NASA Satellite Report on your left and then choose an action on the right."
+  },
+  
+  "tutorial": {
+    "title": "🎓 How to Play?",
+    "step1": "📊 <strong>Observe NASA data:</strong> SMAP (moisture), NDVI (vigor), Climate (blight risk)",
+    "step2": "🎯 <strong>Make decisions:</strong> Irrigation, fertilization, and protection",
+    "step3": "⚖️ <strong>Balance:</strong> Maximize yield WITHOUT harming the environment",
+    "step4": "🏆 <strong>Objective:</strong> Achieve high production and sustainability",
+    "startButton": "Start Playing! 🚀"
+  },
+
+  "nasa": {
+    "reportTitle": "NASA Report",
+    "stage": "Stage {{number}}",
+    "ndvi": "Vigor (NDVI)",
+    "smap": "Moisture (SMAP)",
+    "climate": "Blight Risk",
+    "helpTitle": "What do they mean?",
+    "ndviHelp": "<strong>NDVI:</strong> Plant vigor",
+    "smapHelp": "<strong>SMAP:</strong> Soil moisture",
+    "climateHelp": "<strong>Climate:</strong> Pest risk"
+  },
+
+  "stats": {
+    "title": "📊 Crop Status",
+    "yield": "✅ Yield",
+    "sustainability": "🌳 Sustainability",
+    "ranchRisk": "🚨 Blight Risk"
+  },
+
+  "feedback": {
+    "irrigation": {
+      "lightDry": "✅ Excellent decision! SMAP showed drought. Efficient and timely irrigation.",
+      "lightSaturated": "⚠️ SMAP was Saturated. Irrigation was unnecessary and wasted water.",
+      "lightNormal": "💧 Light irrigation applied. Normal crop maintenance.",
+      "heavyVerydry": "📈 Aggressive but necessary decision. SMAP was VERY DRY. You saved the harvest.",
+      "heavySaturated": "❌ Serious error! Saturated soil + irrigation = waste and higher Blight risk.",
+      "heavyNormal": "⚠️ Heavy irrigation without urgent need. Resource waste.",
+      "noneVerydry": "🚨 The crop urgently needed water. Significant yield loss.",
+      "noneSaturated": "✅ Smart decision. You saved water when irrigation wasn't needed.",
+      "noneNormal": "⏸️ No irrigation applied. Crop maintains current state."
+    },
+    "fertilization": {
+      "organicLow": "🌱 Perfect! NDVI was low. Organic will gradually improve the soil.",
+      "organicHigh": "⚠️ NDVI was already high. Over-fertilizing is unnecessary.",
+      "organicNormal": "🌿 Organic fertilization applied. Long-term benefit.",
+      "chemicalLow": "📈 Quick boost achieved, but with negative environmental impact.",
+      "chemicalNormal": "❌ Unnecessary chemicals. Environmental damage without real benefit.",
+      "noneLow": "⚠️ NDVI was low. The crop needed nutrients.",
+      "noneNormal": "⏸️ No fertilization. Crop maintains current vigor."
+    },
+    "protection": {
+      "bioHigh": "🛡️ Successful sustainable prevention! Blight risk was HIGH.",
+      "bioNormal": "🌿 Biological control applied preventively.",
+      "chemHigh": "💊 Maximum chemical control. Blight drastically reduced, major environmental impact.",
+      "chemNormal": "⚠️ Chemical applied without urgent need. Environmental damage.",
+      "waitHigh": "🔥 DISASTER! Climate was HIGH risk. Blight spread rapidly.",
+      "waitNormal": "⏳ Observation without action. Situation stable for now."
+    },
+    "ranchaCritical": " 🚨 CRITICAL ALERT! Blight manifested due to accumulated risk. Major harvest loss.",
+    "decisionMade": "Decision made. Observe the new situation in the satellite.",
+    "processing": "Processing decision..."
+  },
+
+  "visualization": {
+    "title": "🌾 3D Visualization",
+    "powered": "Powered by Three.js",
+    "legendTitle": "🔍 3D Legend",
+    "legendColor": "<strong>Color:</strong> Vigor (NDVI) 🌱",
+    "legendSoil": "<strong>Soil:</strong> Moisture (SMAP) 💧",
+    "legendRain": "<strong>Rain:</strong> Blight Risk ⛈️"
+  },
+
+  "final": {
+    "title": "Harvest Completed",
+    "yieldLabel": "✅ Harvest Yield",
+    "sustainabilityLabel": "🌳 Environmental Sustainability",
+    "finalScore": "🏆 Final Score",
+    "scoreFormula": "(70% Yield + 30% Sustainability)",
+    "historyTitle": "📊 Your Decisions Summary",
+    "historyStage": "Stage {{stage}}:",
+    "learningTitle": "💡 Key Learning",
+    "learningText": "Success in modern agriculture combines <strong>NASA satellite technology</strong> (SMAP for moisture, NDVI for plant vigor, climate data for pests) with <strong>sustainable decisions</strong> that balance economic productivity and environmental care. Small farmers can be guardians of the planet!",
+    "restartButton": "🔄 Play Again",
+    "medals": {
+      "gold": "Master Farmer! Excellent balance between production and sustainability.",
+      "silver": "Good performance. There's room to improve the sustainable balance.",
+      "bronze": "Regular performance. You need to better understand NASA data.",
+      "study": "You need more practice. Review how to interpret SMAP, NDVI, and Climate."
+    }
+  }
+}

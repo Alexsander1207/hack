@@ -1,0 +1,98 @@
+{
+  "app_title": "HACK NASA Sim",
+  "game": {
+    "title": "🥔 EcoGuardia de la Papa Nativa 🛰️",
+    "stage": "Etapa {{current}} de {{total}}",
+    "initialFeedback": "Observa el Reporte Satelital NASA a tu izquierda y luego elige una acción a la derecha."
+  },
+  
+  "tutorial": {
+    "title": "🎓 ¿Cómo Jugar?",
+    "step1": "📊 <strong>Observa los datos NASA:</strong> SMAP (humedad), NDVI (vigor), Clima (riesgo rancha)",
+    "step2": "🎯 <strong>Toma decisiones:</strong> Riego, fertilización y protección",
+    "step3": "⚖️ <strong>Equilibra:</strong> Maximiza rendimiento SIN dañar el medio ambiente",
+    "step4": "🏆 <strong>Objetivo:</strong> Lograr alta producción y sostenibilidad",
+    "startButton": "¡Empezar a Jugar! 🚀"
+  },
+
+  "nasa": {
+    "reportTitle": "Reporte NASA",
+    "stage": "Etapa {{number}}",
+    "ndvi": "Vigor (NDVI)",
+    "smap": "Humedad (SMAP)",
+    "climate": "Riesgo Rancha",
+    "helpTitle": "¿Qué significan?",
+    "ndviHelp": "<strong>NDVI:</strong> Vigor de plantas",
+    "smapHelp": "<strong>SMAP:</strong> Humedad del suelo",
+    "climateHelp": "<strong>Clima:</strong> Riesgo de plagas"
+  },
+
+  "stats": {
+    "title": "📊 Estado del Cultivo",
+    "yield": "✅ Rendimiento",
+    "sustainability": "🌳 Sostenibilidad",
+    "ranchRisk": "🚨 Riesgo Rancha"
+  },
+
+  "feedback": {
+    "irrigation": {
+      "lightDry": "✅ ¡Excelente decisión! El SMAP mostró sequía. Riego eficiente y oportuno.",
+      "lightSaturated": "⚠️ El SMAP estaba Saturado. El riego fue innecesario y gastó agua.",
+      "lightNormal": "💧 Riego ligero aplicado. Mantenimiento normal del cultivo.",
+      "heavyVerydry": "📈 Decisión agresiva pero necesaria. El SMAP era MUY SECO. Salvaste la cosecha.",
+      "heavySaturated": "❌ ¡Error grave! Suelo saturado + riego = desperdicio y mayor riesgo de Rancha.",
+      "heavyNormal": "⚠️ Riego abundante sin necesidad urgente. Desperdicio de recursos.",
+      "noneVerydry": "🚨 El cultivo necesitaba agua urgente. Pérdida significativa de rendimiento.",
+      "noneSaturated": "✅ Decisión inteligente. Ahorraste agua cuando no era necesario regar.",
+      "noneNormal": "⏸️ Sin riego aplicado. El cultivo mantiene su estado actual."
+    },
+    "fertilization": {
+      "organicLow": "🌱 ¡Perfecto! El NDVI era bajo. El orgánico mejorará el suelo gradualmente.",
+      "organicHigh": "⚠️ El NDVI ya era alto. Fertilizar de más es innecesario.",
+      "organicNormal": "🌿 Fertilización orgánica aplicada. Beneficio a largo plazo.",
+      "chemicalLow": "📈 Boost rápido logrado, pero con impacto ambiental negativo.",
+      "chemicalNormal": "❌ Químicos innecesarios. Daño ambiental sin beneficio real.",
+      "noneLow": "⚠️ El NDVI era bajo. El cultivo necesitaba nutrientes.",
+      "noneNormal": "⏸️ Sin fertilización. El cultivo mantiene su vigor actual."
+    },
+    "protection": {
+      "bioHigh": "🛡️ ¡Prevención sostenible exitosa! El riesgo de Rancha era ALTO.",
+      "bioNormal": "🌿 Control biológico aplicado preventivamente.",
+      "chemHigh": "💊 Control químico máximo. Rancha reducida drásticamente, gran impacto ambiental.",
+      "chemNormal": "⚠️ Químico aplicado sin necesidad urgente. Daño ambiental.",
+      "waitHigh": "🔥 ¡DESASTRE! El clima era de ALTO riesgo. La Rancha se propagó rápidamente.",
+      "waitNormal": "⏳ Observación sin acción. Situación estable por ahora."
+    },
+    "ranchaCritical": " 🚨 ¡ALERTA CRÍTICA! La Rancha se manifestó por riesgo acumulado. Gran pérdida de cosecha.",
+    "decisionMade": "Decisión tomada. Observa la nueva situación en el satélite.",
+    "processing": "Procesando decisión..."
+  },
+
+  "visualization": {
+    "title": "🌾 Visualización 3D",
+    "powered": "Powered by Three.js",
+    "legendTitle": "🔍 Leyenda 3D",
+    "legendColor": "<strong>Color:</strong> Vigor (NDVI) 🌱",
+    "legendSoil": "<strong>Suelo:</strong> Humedad (SMAP) 💧",
+    "legendRain": "<strong>Lluvia:</strong> Riesgo Rancha ⛈️"
+  },
+
+  "final": {
+    "title": "Cosecha Finalizada",
+    "yieldLabel": "✅ Rendimiento de Cosecha",
+    "sustainabilityLabel": "🌳 Sostenibilidad Ambiental",
+    "finalScore": "🏆 Puntuación Final",
+    "scoreFormula": "(70% Rendimiento + 30% Sostenibilidad)",
+    "historyTitle": "📊 Resumen de tus Decisiones",
+    "historyStage": "Etapa {{stage}}:",
+    "learningTitle": "💡 Aprendizaje Clave",
+    "learningText": "El éxito en la agricultura moderna combina <strong>tecnología satelital NASA</strong> (SMAP para humedad, NDVI para vigor vegetal, datos climáticos para plagas) con <strong>decisiones sostenibles</strong> que equilibran productividad económica y cuidado del medio ambiente. ¡Los pequeños agricultores pueden ser guardianes del planeta!",
+    "restartButton": "🔄 Jugar de Nuevo",
+    "medals": {
+      "gold": "¡Agricultor Maestro! Excelente equilibrio entre producción y sostenibilidad.",
+      "silver": "Buen desempeño. Hay espacio para mejorar el balance sostenible.",
+      "bronze": "Desempeño regular. Necesitas entender mejor los datos NASA.",
+      "study": "Necesitas más práctica. Revisa cómo interpretar SMAP, NDVI y Clima."
+    }
+  }
+}

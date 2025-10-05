@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { FaHome, FaFolderOpen, FaPlusCircle, FaGlobe, FaUser } from "react-icons/fa";
+import { FaHome, FaFolderOpen, FaPlusCircle } from "react-icons/fa";
 import {  useNavigate } from "react-router-dom";
 
 function FooterNav() {
   const navigate = useNavigate();
   const [activeIcon, setActiveIcon] = useState('home');
 
-  const navItems = [
-    { id: 'home', href: '/', Icon: FaHome, label: 'Inicio' },
-    { id: 'docs', href: '/docs', Icon: FaFolderOpen, label: 'Docs' },
-    { id: 'add', href: '/add', Icon: FaPlusCircle, label: 'Crear', isCenter: true },
-    { id: 'world', href: '/world', Icon: FaGlobe, label: 'Mundo' },
-    { id: 'profile', href: '/profile', Icon: FaUser, label: 'Perfil' }
-  ];
+const navItems = [
+  { id: 'home', href: '/', Icon: FaHome, label: 'Inicio' },
+  { id: 'add', href: '/add', Icon: FaPlusCircle, label: 'Crear', isCenter: true },
+  { id: 'docs', href: '/docs', Icon: FaFolderOpen, label: 'Docs' }
+];
 
   const handleNavClick = (href, id) => {
     setActiveIcon(id);
