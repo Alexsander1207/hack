@@ -1,28 +1,27 @@
 // src/App.js
 import React from 'react';
-import '../App.css'
+import '../App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ParcelProvider } from '../context/ParcelContext'; // ← AGREGAR ESTO
 import Home from "../pages/HomeTemp";
-import Minigames from "../pages/MiniGames";
-import GameController from '../components/GameController';
+import AddParcel from "../pages/AddParcel";
+import Docs from "../pages/Docs";
+import GameController from "../components/GameController";
 
 function AppRoutes() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/minigames" element={<Minigames />} />
-        {/* <Route path="/rancha-papa" element={<PotatoDiseaseGame />} />
-        <Route path="/add" element={<PotatoDiseaseGame />} /> */}
-        {/* Si quieres usar GameController como ruta */}
-        <Route path="/game-controller" element={<GameController />} />
-      </Routes>
-    </Router>
+    <ParcelProvider>  
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/minigames" element={<GameController />} />
+          <Route path="/add" element={<AddParcel />} />
+          <Route path="/docs" element={<Docs />} />
+          <Route path="/game-controller" element={<GameController />} />
+        </Routes>
+      </Router>
+    </ParcelProvider> 
   );
 }
-
-function App() {
-  return <AppRoutes />;
-}
-
-export default App;
+  
+export default AppRoutes;
