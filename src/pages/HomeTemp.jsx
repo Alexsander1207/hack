@@ -87,10 +87,6 @@ function Home() {
               <span style={styles.userName}>{userName} 👋</span>
             </div>
           </div>
-          <div style={styles.headerBadge}>
-            <FaBook size={16} style={{ marginRight: '6px' }} />
-            <span>Nivel 5</span>
-          </div>
         </div>
       </header>
 
