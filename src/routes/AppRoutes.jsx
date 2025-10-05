@@ -4,8 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/HomeTemp";
 import Minigames from "../pages/MiniGames";
-import PotatoDiseaseGame from "../pages/PotatoDiseaseGame";
-import GameController from './components/GameController'; // Importamos el cerebro del juego
+import GameController from '../components/GameController';
 
 function AppRoutes() {
   return (
@@ -13,8 +12,8 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/minigames" element={<Minigames />} />
-        <Route path="/rancha-papa" element={<PotatoDiseaseGame />} />
-        <Route path="/add" element={<PotatoDiseaseGame />} />
+        {/* <Route path="/rancha-papa" element={<PotatoDiseaseGame />} />
+        <Route path="/add" element={<PotatoDiseaseGame />} /> */}
         {/* Si quieres usar GameController como ruta */}
         <Route path="/game-controller" element={<GameController />} />
       </Routes>
