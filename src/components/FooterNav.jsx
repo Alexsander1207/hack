@@ -59,7 +59,7 @@ const navItems = [
               <>
                 <div style={styles.centerGlow} />
                 <div className="tooltip" style={styles.tooltip}>
-                  Agregar Parcela
+                  Add plot
                 </div>
               </>
             )}

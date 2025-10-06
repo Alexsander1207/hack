@@ -138,6 +138,21 @@ function Docs() {
     return icons[cropType] || '🌱';
   };
 
+  // Map Spanish colors (or any variant) to English
+  const colorNameMap = {
+    verde: "Green",
+    amarillo: "Yellow",
+    naranja: "Orange",
+    rojo: "Red",
+    green: "Green",
+    yellow: "Yellow",
+    orange: "Orange",
+    red: "Red"
+  };
+
+
+
+
   const getPredictionColor = (pred) => {
     const colors = {
       verde: { bg: '#d4edda', color: '#155724', border: '#c3e6cb' },
@@ -156,12 +171,12 @@ function Docs() {
 
   const getPredictionMessage = (pred) => {
     const messages = {
-      verde: 'Condiciones óptimas para tu cultivo. ¡Todo está bien!',
-      amarillo: 'Condiciones aceptables. Mantén un monitoreo regular.',
-      naranja: 'Condiciones de alerta. Se recomienda tomar precauciones.',
-      rojo: 'Condiciones críticas. Se requiere acción inmediata.'
+      verde: 'Optimal conditions for your crop. Everything is fine!',
+      amarillo: 'Acceptable conditions. Maintain regular monitoring.',
+      naranja: 'Alert conditions. Precautions are recommended.',
+      rojo: 'Critical conditions. Immediate action is required.'
     };
-    return messages[pred?.toLowerCase()] || 'Predicción en proceso...';
+    return messages[pred?.toLowerCase()] || 'Prediction in progress...';
   };
 
   return (
@@ -169,9 +184,9 @@ function Docs() {
       {/* Header */}
       <header style={styles.header}>
         <div style={styles.headerContent}>
-          <h1 style={styles.headerTitle}>Mis Parcelas</h1>
+          <h1 style={styles.headerTitle}>My plots</h1>
           <p style={styles.headerSubtitle}>
-            {parcels.length} {parcels.length === 1 ? 'parcela registrada' : 'parcelas registradas'}
+            {parcels.length} {parcels.length === 1 ? 'registered plot' : 'registered plots'}
           </p>
         </div>
         <button 
@@ -179,7 +194,7 @@ function Docs() {
           onClick={() => navigate('/add')}
         >
           <FaPlus style={{ marginRight: '8px' }} />
-          Nueva Parcela
+          New Plot
         </button>
       </header>
 
@@ -190,16 +205,16 @@ function Docs() {
             <div style={styles.emptyIcon}>
               <FaSeedling size={60} />
             </div>
-            <h2 style={styles.emptyTitle}>No tienes parcelas registradas</h2>
+            <h2 style={styles.emptyTitle}>You have no registered plots</h2>
             <p style={styles.emptyText}>
-              Comienza agregando tu primera parcela para obtener predicciones y recomendaciones
+              Start by adding your first plot to get predictions and recommendations.
             </p>
             <button 
               style={styles.btnEmptyAction}
               onClick={() => navigate('/add')}
             >
               <FaPlus style={{ marginRight: '8px' }} />
-              Agregar Primera Parcela
+              Add First Plot
             </button>
           </div>
         ) : (
@@ -257,12 +272,12 @@ function Docs() {
                     {loadingData[parcel.id] ? (
                       <>
                         <FaSync className="spinning" style={{ marginRight: '8px' }} />
-                        Analizando...
+                        Analyzing...
                       </>
                     ) : (
                       <>
                         <FaCloudSun style={{ marginRight: '8px' }} />
-                        Obtener Predicción
+                        Get Prediction
                       </>
                     )}
                   </button>
@@ -276,10 +291,10 @@ function Docs() {
                 <div style={styles.resultsPanelHeader}>
                   <h3 style={styles.resultsTitle}>
                     <FaCloudSun style={{ marginRight: '10px' }} />
-                    Análisis de {selectedParcel.parcelName}
+                    Analysis of {selectedParcel.parcelName}
                   </h3>
                   <p style={styles.resultsSubtitle}>
-                    Datos climáticos de los últimos 7 días
+                   Weather data for the last 7 days
                   </p>
                 </div>
 
@@ -290,7 +305,7 @@ function Docs() {
                       <FaTemperatureHigh size={24} />
                     </div>
                     <div style={styles.dataContent}>
-                      <span style={styles.dataLabel}>Temperatura Promedio</span>
+                      <span style={styles.dataLabel}>Average Temperature</span>
                       <span style={styles.dataValue}>{weatherData.temp_7d}°C</span>
                     </div>
                   </div>
@@ -300,7 +315,7 @@ function Docs() {
                       <FaTint size={24} />
                     </div>
                     <div style={styles.dataContent}>
-                      <span style={styles.dataLabel}>Humedad Promedio</span>
+                      <span style={styles.dataLabel}>Average Humidity</span>
                       <span style={styles.dataValue}>{weatherData.hr_7d}%</span>
                     </div>
                   </div>
@@ -310,7 +325,7 @@ function Docs() {
                       <FaTint size={24} />
                     </div>
                     <div style={styles.dataContent}>
-                      <span style={styles.dataLabel}>Precipitación Total</span>
+                      <span style={styles.dataLabel}>Total Precipitation</span>
                       <span style={styles.dataValue}>{weatherData.ppt_7d} mm</span>
                     </div>
                   </div>
@@ -333,10 +348,10 @@ function Docs() {
                     </div>
                     <div style={styles.predictionContent}>
                       <h4 style={{
-                        ...styles.predictionTitle,
-                        color: getPredictionColor(prediction).color
-                      }}>
-                        Estado: {prediction.toUpperCase()}
+                          ...styles.predictionTitle,
+                          color: getPredictionColor(prediction).color
+                        }}>
+                          Status: {colorNameMap[prediction?.toLowerCase()] || prediction.toUpperCase()}
                       </h4>
                       <p style={{
                         ...styles.predictionMessage,

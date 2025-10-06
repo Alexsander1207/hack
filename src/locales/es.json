@@ -70,7 +70,6 @@
 
   "visualization": {
     "title": "🌾 Visualización 3D",
-    "powered": "Powered by Three.js",
     "legendTitle": "🔍 Leyenda 3D",
     "legendColor": "<strong>Color:</strong> Vigor (NDVI) 🌱",
     "legendSoil": "<strong>Suelo:</strong> Humedad (SMAP) 💧",

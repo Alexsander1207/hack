@@ -494,7 +494,6 @@ const GameController = () => {
         <div className="columna-central">
           <div className="viz-header">
             <h3>{t('visualization.title')}</h3>
-            <span className="tech-badge">{t('visualization.powered')}</span>
           </div>
           
           <div className={`viz-container-central ${bloqueado ? 'processing' : ''}`}>
