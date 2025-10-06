@@ -5,34 +5,34 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [greeting, setGreeting] = useState("");
-  const [userName] = useState("Agricultor");
+  const [userName] = useState("Farmer");
   const [hoveredCard, setHoveredCard] = useState(null);
 
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour < 12) {
-      setGreeting("¡Buenos días");
+      setGreeting("¡Good morning");
     } else if (hour < 19) {
-      setGreeting("¡Buenas tardes");
+      setGreeting("¡Good afternoon");
     } else {
-      setGreeting("¡Buenas noches");
+      setGreeting("¡Good evening");
     }
   }, []);
 
   const mainFeatures = [
     {
       id: 'recomendaciones',
-      title: 'Recomendaciones IA',
-      description: 'Sistema inteligente de cultivos',
+      title: 'AI Recommendations',
+      description: 'Smart Crop Chatbot',
       icon: FaSeedling,
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       path: '/recommendations',
-      badge: 'Nuevo'
+      badge: 'New'
     },
     {
       id: 'rutas',
-      title: 'Rutas de Apoyo',
-      description: 'Encuentra ayuda cercana',
+      title: 'Support ',
+      description: 'Find help nearby',
       icon: FaRoute,
       gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
       path: '/routes',
@@ -40,12 +40,12 @@ function Home() {
     },
     {
       id: 'juegos',
-      title: 'Mini Juegos',
-      description: 'Aprende jugando',
+      title: 'Mini Game',
+      description: 'Learn by playing',
       icon: FaGamepad,
       gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       path: '/minigames',
-      badge: 'Divertido'
+      badge: 'Fun'
     }
   ];
 
@@ -77,7 +77,7 @@ function Home() {
             </div>
             <div style={styles.greetingText}>
               <span style={styles.greetingTime}>{greeting}</span>
-              <span style={styles.userName}>{userName} 👋</span>
+              <span style={styles.userName}>{userName}!👋</span>
             </div>
           </div>
         </div>
@@ -87,10 +87,10 @@ function Home() {
       <section style={styles.heroSection}>
         <div style={styles.heroContent}>
           <h1 style={styles.heroTitle}>
-            Bienvenido a <span style={styles.brandName}>Ecoguardian</span>
+            Welcome to <span style={styles.brandName}>Ecoguardian</span>
           </h1>
           <p style={styles.heroSubtitle}>
-            Tu asistente inteligente para agricultura sostenible
+            Your smart platform for sustainable farmers
           </p>
           
           <div style={styles.heroImageContainer}>
@@ -110,7 +110,7 @@ function Home() {
 
       {/* Main Features Cards */}
       <section style={styles.featuresSection}>
-        <h2 style={styles.sectionTitle}>Explora Nuestras Herramientas</h2>
+        <h2 style={styles.sectionTitle}>Explore Our Tools</h2>
         
         <div style={styles.mainCardsGrid}>
           {mainFeatures.map((feature) => {
@@ -161,8 +161,8 @@ function Home() {
       {/* Quick Access Section */}
       <section style={styles.quickAccessSection}>
         <div style={styles.sectionHeader}>
-          <h2 style={styles.sectionTitle}>Acceso Rápido</h2>
-          <span style={styles.sectionSubtitle}>Tus herramientas favoritas</span>
+          <h2 style={styles.sectionTitle}>Quick Access</h2>
+          <span style={styles.sectionSubtitle}>Your Favorite Tools</span>
         </div>
         
         <div style={styles.quickGrid}>
@@ -204,23 +204,75 @@ function Home() {
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <section style={styles.statsBanner}>
-        <div style={styles.statItem}>
-          <span style={styles.statNumber}>125</span>
-          <span style={styles.statLabel}>Cultivos</span>
-        </div>
-        <div style={styles.statDivider} />
-        <div style={styles.statItem}>
-          <span style={styles.statNumber}>48</span>
-          <span style={styles.statLabel}>Días activo</span>
-        </div>
-        <div style={styles.statDivider} />
-        <div style={styles.statItem}>
-          <span style={styles.statNumber}>92%</span>
-          <span style={styles.statLabel}>Éxito</span>
-        </div>
-      </section>
+      {/* Team Section */}
+      <section style={{ display: 'flex', justifyContent: 'space-around', padding: '50px 20px', flexWrap: 'wrap', background: '#f9f9f9' }}>
+          {[
+            {
+              name: "Ruben Alexander Sinche Rojas",
+              role: "Backend Developer",
+              image: "/images/Capibara.jpg",
+              linkedin: "https://www.linkedin.com/in/rubensinche/"
+            },
+            {
+              name: "Jelibeth Jimena Ramirez Vilchez",
+              role: "Frontend Developer and agro specialist",
+              image: "/images/jel.jpg",
+              linkedin: "https://www.linkedin.com/in/jelibeth-jimena-ramirez-vilchez-4b24bb2b4/"
+            },
+            {
+              name: "Alexsander Antoni Jayo Mallqui",
+              role: "IA analyst",
+              image: "/images/jayo.jpg",
+              linkedin: "https://www.linkedin.com/in/alexsander-jayo-0b4500362/"
+            },
+            {
+              name: "Richard Favio Asturimac Medina",
+              role: "Cloud Developer",
+              image: "/images/favio.jpg",
+              linkedin: "https://www.linkedin.com/in/favio-asturimac-6b907825b/"
+            }
+          ].map((member, idx) => (
+            <a 
+              key={idx}
+              href={member.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: 'none',
+                color: '#333',
+                width: '200px',
+                margin: '20px',
+                textAlign: 'center',
+                transition: 'transform 0.3s, box-shadow 0.3s'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-10px)';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div style={{
+                width: '150px',
+                height: '150px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                margin: '0 auto 15px auto',
+                border: '4px solid #667eea'
+              }}>
+                <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div>
+                <h4 style={{ margin: '5px 0', fontSize: '18px', fontWeight: '600' }}>{member.name}</h4>
+                <h5 style={{ margin: '2px 0', fontSize: '14px', color: '#666', fontWeight: '400' }}>{member.role}</h5>
+              </div>
+            </a>
+          ))}
+        </section>
+
+
 
       <FooterNav />
     </div>

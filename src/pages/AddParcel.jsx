@@ -31,26 +31,26 @@ function AddParcel() {
   const [isLocating, setIsLocating] = useState(false);
 
   const cropTypes = [
-    { value: 'papa', label: '🥔 Papa', icon: '🥔' },
-    { value: 'maiz', label: '🌽 Maíz', icon: '🌽' },
-    { value: 'quinua', label: '🌾 Quinua', icon: '🌾' },
-    { value: 'trigo', label: '🌾 Trigo', icon: '🌾' },
-    { value: 'cebada', label: '🌾 Cebada', icon: '🌾' },
-    { value: 'habas', label: '🫘 Habas', icon: '🫘' }
+    { value: 'papa', label: '🥔 Potato', icon: '🥔' },
+    { value: 'maiz', label: '🌽 Corn', icon: '🌽' },
+    { value: 'quinua', label: '🌾 Quinoa', icon: '🌾' },
+    { value: 'trigo', label: '🌾 Wheat', icon: '🌾' },
+    { value: 'cebada', label: '🌾 Barley', icon: '🌾' },
+    { value: 'habas', label: '🫘 Beans', icon: '🫘' }
   ];
 
   const soilTypes = [
-    { value: 'arcilloso', label: 'Arcilloso' },
-    { value: 'arenoso', label: 'Arenoso' },
-    { value: 'limoso', label: 'Limoso' },
-    { value: 'franco', label: 'Franco' }
+    { value: 'arcilloso', label: 'Clay' },
+    { value: 'arenoso', label: 'Sandy' },
+    { value: 'limoso', label: 'Silty' },
+    { value: 'franco', label: 'Loamy' }
   ];
 
   const irrigationTypes = [
-    { value: 'goteo', label: 'Riego por Goteo' },
-    { value: 'aspersion', label: 'Riego por Aspersión' },
-    { value: 'gravedad', label: 'Riego por Gravedad' },
-    { value: 'lluvia', label: 'Solo Lluvia' }
+    { value: 'goteo', label: 'Drip Irrigation' },
+    { value: 'aspersion', label: 'Sprinkler Irrigation' },
+    { value: 'gravedad', label: 'Gravity Irrigation' },
+    { value: 'lluvia', label: 'Rain Only' }
   ];
 
   const handleInputChange = (field, value) => {
@@ -100,13 +100,13 @@ function AddParcel() {
   const handleSubmit = () => {
     // Validaciones
     if (!formData.parcelName || !formData.cropType || !formData.area) {
-      alert('Por favor completa todos los campos obligatorios');
+      alert('Please complete all required fields');
       return;
     }
 
     // Guardar parcela en el Context
     const savedParcel = addParcel(formData);
-    console.log('Parcela registrada:', savedParcel);
+    console.log('Registered plot:', savedParcel);
     
     // Mostrar paso de éxito
     setStep(4);
@@ -118,14 +118,14 @@ function AddParcel() {
         <div style={styles.stepIcon}>
           <FaSeedling size={32} />
         </div>
-        <h2 style={styles.stepTitle}>Información Básica</h2>
-        <p style={styles.stepSubtitle}>Cuéntanos sobre tu parcela</p>
+        <h2 style={styles.stepTitle}>Basic Information</h2>
+        <p style={styles.stepSubtitle}>Tell us about your plot</p>
       </div>
 
       <div style={styles.formGroup}>
         <label style={styles.label}>
           <FaSeedling style={styles.labelIcon} />
-          Nombre de la Parcela *
+          Parcel Name *
         </label>
         <input
           type="text"
@@ -139,7 +139,7 @@ function AddParcel() {
       <div style={styles.formGroup}>
         <label style={styles.label}>
           <FaSeedling style={styles.labelIcon} />
-          Tipo de Cultivo *
+          Crop Type *
         </label>
         <div style={styles.cropGrid}>
           {cropTypes.map(crop => (
@@ -162,7 +162,7 @@ function AddParcel() {
         <div style={styles.formGroup}>
           <label style={styles.label}>
             <FaRuler style={styles.labelIcon} />
-            Área (hectáreas) *
+            Area (hectares) *
           </label>
           <input
             type="number"
@@ -177,7 +177,7 @@ function AddParcel() {
         <div style={styles.formGroup}>
           <label style={styles.label}>
             <FaCalendarAlt style={styles.labelIcon} />
-            Fecha de Siembra
+            Planting Date
           </label>
           <input
             type="date"
@@ -189,7 +189,7 @@ function AddParcel() {
       </div>
 
       <button style={styles.btnNext} onClick={() => setStep(2)}>
-        Siguiente: Ubicación
+        Next: Location
       </button>
     </div>
   );
@@ -200,14 +200,14 @@ function AddParcel() {
         <div style={styles.stepIcon}>
           <FaMapMarkerAlt size={32} />
         </div>
-        <h2 style={styles.stepTitle}>Ubicación de la Parcela</h2>
-        <p style={styles.stepSubtitle}>Selecciona la ubicación exacta</p>
-      </div>
+        <h2 style={styles.stepTitle}>Parcel Location</h2>
+        <p style={styles.stepSubtitle}>Select the exact location</p>
+        </div>
 
-      <div style={styles.locationInfo}>
+        <div style={styles.locationInfo}>
         <FaInfoCircle style={styles.infoIcon} />
         <p style={styles.infoText}>
-          Toca en el mapa para seleccionar la ubicación o usa tu ubicación actual
+        Tap the map to select the location or use your current location
         </p>
       </div>
 
@@ -217,7 +217,7 @@ function AddParcel() {
         disabled={isLocating}
       >
         <FaCrosshairs style={{ marginRight: '8px' }} />
-        {isLocating ? 'Obteniendo ubicación...' : 'Usar mi ubicación actual'}
+       {isLocating ? 'Getting location...' : 'Use my current location'}
       </button>
 
       <div style={styles.mapContainer} onClick={handleMapClick}>
@@ -240,25 +240,25 @@ function AddParcel() {
 
       <div style={styles.coordinatesBox}>
         <div style={styles.coordItem}>
-          <span style={styles.coordLabel}>Latitud:</span>
+          <span style={styles.coordLabel}>Latitude:</span>
           <span style={styles.coordValue}>{formData.latitude.toFixed(6)}</span>
         </div>
         <div style={styles.coordItem}>
-          <span style={styles.coordLabel}>Longitud:</span>
+          <span style={styles.coordLabel}>Length:</span>
           <span style={styles.coordValue}>{formData.longitude.toFixed(6)}</span>
         </div>
         <div style={styles.coordItem}>
-          <span style={styles.coordLabel}>Altitud:</span>
+          <span style={styles.coordLabel}>Altitude:</span>
           <span style={styles.coordValue}>{formData.altitude} m</span>
         </div>
       </div>
 
       <div style={styles.btnGroup}>
         <button style={styles.btnBack} onClick={() => setStep(1)}>
-          Atrás
+          Back
         </button>
         <button style={styles.btnNext} onClick={() => setStep(3)}>
-          Siguiente: Detalles
+          Next: Details
         </button>
       </div>
     </div>
@@ -270,18 +270,18 @@ function AddParcel() {
         <div style={styles.stepIcon}>
           <FaCloudSun size={32} />
         </div>
-        <h2 style={styles.stepTitle}>Detalles Adicionales</h2>
-        <p style={styles.stepSubtitle}>Información para mejores predicciones</p>
+        <h2 style={styles.stepTitle}>Additional Details</h2>
+        <p style={styles.stepSubtitle}>Information for better predictions</p>
       </div>
 
       <div style={styles.formGroup}>
-        <label style={styles.label}>Tipo de Suelo</label>
+        <label style={styles.label}>Soil Type</label>
         <select
           style={styles.select}
           value={formData.soilType}
           onChange={(e) => handleInputChange('soilType', e.target.value)}
         >
-          <option value="">Selecciona un tipo</option>
+          <option value="">Select a type</option>
           {soilTypes.map(soil => (
             <option key={soil.value} value={soil.value}>{soil.label}</option>
           ))}
@@ -289,7 +289,7 @@ function AddParcel() {
       </div>
 
       <div style={styles.formGroup}>
-        <label style={styles.label}>Sistema de Riego</label>
+        <label style={styles.label}>Irrigation System</label>
         <div style={styles.radioGroup}>
           {irrigationTypes.map(irrigation => (
             <label key={irrigation.value} style={styles.radioLabel}>
@@ -308,24 +308,24 @@ function AddParcel() {
       </div>
 
       <div style={styles.summaryBox}>
-        <h3 style={styles.summaryTitle}>Resumen de tu Parcela</h3>
+        <h3 style={styles.summaryTitle}>Summary of your Plot</h3>
         <div style={styles.summaryGrid}>
           <div style={styles.summaryItem}>
-            <span style={styles.summaryLabel}>Nombre:</span>
+            <span style={styles.summaryLabel}>Name:</span>
             <span style={styles.summaryValue}>{formData.parcelName || '-'}</span>
           </div>
           <div style={styles.summaryItem}>
-            <span style={styles.summaryLabel}>Cultivo:</span>
+            <span style={styles.summaryLabel}>Crop:</span>
             <span style={styles.summaryValue}>
               {cropTypes.find(c => c.value === formData.cropType)?.label || '-'}
             </span>
           </div>
           <div style={styles.summaryItem}>
-            <span style={styles.summaryLabel}>Área:</span>
+            <span style={styles.summaryLabel}>Area:</span>
             <span style={styles.summaryValue}>{formData.area || '-'} ha</span>
           </div>
           <div style={styles.summaryItem}>
-            <span style={styles.summaryLabel}>Ubicación:</span>
+            <span style={styles.summaryLabel}>Location:</span>
             <span style={styles.summaryValue}>
               {formData.latitude.toFixed(4)}, {formData.longitude.toFixed(4)}
             </span>
@@ -335,11 +335,11 @@ function AddParcel() {
 
       <div style={styles.btnGroup}>
         <button style={styles.btnBack} onClick={() => setStep(2)}>
-          Atrás
+          Back
         </button>
         <button style={styles.btnSubmit} onClick={handleSubmit}>
           <FaCheckCircle style={{ marginRight: '8px' }} />
-          Registrar Parcela
+          Register Plot
         </button>
       </div>
     </div>
@@ -350,17 +350,17 @@ function AddParcel() {
       <div style={styles.successIcon}>
         <FaCheckCircle size={80} />
       </div>
-      <h2 style={styles.successTitle}>¡Parcela Registrada!</h2>
+      <h2 style={styles.successTitle}>Registered Plot!</h2>
       <p style={styles.successText}>
-        Tu parcela <strong>{formData.parcelName}</strong> ha sido registrada exitosamente.
+        Your parcel <strong>{formData.parcelName}</strong> has been successfully registered.
       </p>
       <p style={styles.successSubtext}>
-        Ahora puedes obtener predicciones y recomendaciones para tu cultivo de {cropTypes.find(c => c.value === formData.cropType)?.label}
+        Now you can get predictions and recommendations for your crop. {cropTypes.find(c => c.value === formData.cropType)?.label}
       </p>
       
       <div style={styles.successActions}>
         <button style={styles.btnPrimary} onClick={() => navigate('/docs')}>
-          Ver Mis Parcelas
+          View My Plots
         </button>
         <button style={styles.btnSecondary} onClick={() => {
           setStep(1);
@@ -376,7 +376,7 @@ function AddParcel() {
             irrigationType: ''
           });
         }}>
-          Agregar Otra Parcela
+          Add Another Plot
         </button>
       </div>
     </div>
@@ -385,7 +385,7 @@ function AddParcel() {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1 style={styles.headerTitle}>Agregar Parcela</h1>
+        <h1 style={styles.headerTitle}>Add Plot</h1>
         <div style={styles.progressBar}>
           {[1, 2, 3].map(num => (
             <div

@@ -41,25 +41,25 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
       {
         valor: 'ligero',
         icono: '💧',
-        titulo: 'Riego Ligero',
-        descripcion: 'Eficiente para suelos secos',
-        impacto: '+Rendimiento | Sostenible',
+        titulo: 'Light Irrigation',
+        descripcion: 'Efficient for dry soils',
+        impacto: '+Performance | Sustainable',
         color: '#3498db'
       },
       {
         valor: 'abundante',
         icono: '🌊',
-        titulo: 'Abundante',
-        descripcion: 'Uso intensivo de agua',
-        impacto: '++Rendimiento | -Sostenibilidad',
+        titulo: 'Abundant',
+        descripcion: 'Intensive use of water',
+        impacto: '++Performance | -Sustainability',
         color: '#e74c3c'
       },
       {
         valor: 'no_regar',
         icono: '🚫',
-        titulo: 'No Regar',
-        descripcion: 'Ahorra agua',
-        impacto: 'Neutral | ++Sostenible',
+        titulo: 'Do not water',
+        descripcion: 'Save water',
+        impacto: 'Neutral | ++Sustainable',
         color: '#95a5a6'
       }
     ],
@@ -67,24 +67,24 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
       {
         valor: 'organico',
         icono: '🌱',
-        titulo: 'Orgánico',
-        descripcion: 'Mejora el suelo largo plazo',
-        impacto: '+Rendimiento | +Sostenibilidad',
+        titulo: 'Organic',
+        descripcion: 'Improves the soil long term',
+        impacto: '+Performance | +Sustainability',
         color: '#27ae60'
       },
       {
         valor: 'quimico',
         icono: '⚗️',
-        titulo: 'Químico',
-        descripcion: 'Resultados rápidos',
-        impacto: '++Rendimiento | --Sostenibilidad',
+        titulo: 'Chemical',
+        descripcion: 'Quick results',
+        impacto: '++Performance | --Sustainability',
         color: '#e67e22'
       },
       {
         valor: 'no_fertilizar',
         icono: '⏸️',
-        titulo: 'No Fertilizar',
-        descripcion: 'Descansar el suelo',
+        titulo: 'Do not Fertilize',
+        descripcion: 'Rest the ground',
         impacto: 'Neutral',
         color: '#95a5a6'
       }
@@ -93,25 +93,25 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
       {
         valor: 'biologico',
         icono: '🛡️',
-        titulo: 'Biológico',
-        descripcion: 'Control natural',
-        impacto: '-Rancha | +Sostenibilidad',
+        titulo: 'Biological',
+        descripcion: 'natural control',
+        impacto: '-Rancha | +Sustainability',
         color: '#16a085'
       },
       {
         valor: 'quimico',
         icono: '💊',
-        titulo: 'Químico',
-        descripcion: 'Eliminación agresiva',
-        impacto: '--Rancha | -Sostenibilidad',
+        titulo: 'Chemical',
+        descripcion: 'Aggressive removal',
+        impacto: '--Rancha | -Sustainability',
         color: '#c0392b'
       },
       {
         valor: 'esperar',
         icono: '⏳',
-        titulo: 'Esperar',
-        descripcion: 'Observar evolución',
-        impacto: 'Riesgo si clima ALTO',
+        titulo: 'Wait',
+        descripcion: 'Observe evolution',
+        impacto: 'Risk if weather HIGH',
         color: '#f39c12'
       }
     ]
@@ -154,14 +154,14 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
   return (
     <div className="decision-panel">
       <h3 className="decision-title">
-        🎯 Elige tu Acción como EcoGuardián
+        🎯 Choose your Action as an EcoGuardian
       </h3>
 
       {/* RIEGO */}
       <div className="decision-category">
         <h4 className="category-header">
-          💧 Gestión del Riego 
-          {datosNASA && <span className="category-hint">(Guía: SMAP - {datosNASA.SMAP})</span>}
+          💧 Irrigation Management
+          {datosNASA && <span className="category-hint">(Guide: SMAP - {datosNASA.SMAP})</span>}
         </h4>
         <div className="botones-grid">
           {opciones.riego.map(opcion => (
@@ -173,8 +173,8 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
       {/* FERTILIZACIÓN */}
       <div className="decision-category">
         <h4 className="category-header">
-          🌱 Gestión de Nutrientes
-          {datosNASA && <span className="category-hint">(Guía: NDVI - {datosNASA.NDVI})</span>}
+          🌱 Nutrient Management
+          {datosNASA && <span className="category-hint">(Guide: NDVI - {datosNASA.NDVI})</span>}
         </h4>
         <div className="botones-grid">
           {opciones.fertilizacion.map(opcion => (
@@ -186,8 +186,8 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
       {/* PROTECCIÓN */}
       <div className="decision-category">
         <h4 className="category-header">
-          🛡️ Gestión de Plagas
-          {datosNASA && <span className="category-hint">(Guía: Clima - {datosNASA.Clima})</span>}
+          🛡️ Pest Management
+          {datosNASA && <span className="category-hint">(Climate: Clima - {datosNASA.Clima})</span>}
         </h4>
         <div className="botones-grid">
           {opciones.proteccion.map(opcion => (
@@ -197,7 +197,7 @@ const DecisionPanel = ({ manejarDecision, datosNASA, bloqueado }) => {
       </div>
 
       <div className="decision-tip">
-        💡 <strong>Consejo:</strong> Las opciones con ⭐ son recomendadas según los datos NASA
+        💡 <strong>Tip:</strong> Options marked with ⭐ are recommended based on NASA data
       </div>
     </div>
   );
